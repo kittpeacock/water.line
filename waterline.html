@@ -1,0 +1,277 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="stylesheet.css" rel="stylesheet">
+    
+    <!--FONTS ZONE-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&amp;display=swap" rel="stylesheet">
+    <!--FONTS ZONE OVER-->
+    
+    <title>water.line radio</title>
+</head>
+
+<body>
+    <!--VIDEO BACKGROUND-->
+       <video id="background-video" autoplay loop muted>
+       <source src="waterline.mp4" type="video/mp4">
+</video>
+     <!--END VIDEO BACKGROUND-->
+        
+     <div class="container">
+    <div class="left">
+         <!--LEFT COLUMN CONTENT ZONE-->
+          
+    <div class="sub-left">
+         <h1>water.line</h1>
+         <h3><b>trans and </b><i><strong>gender </strong>non-conforming</i> radio</h3>
+    </div>
+    <div class="under-header-radio">
+          <!--AUDIO PICKER BEGINS-->
+
+  <!--AUDIO PICKER ENDS-->
+      
+ <!--NEW TIDE CHECKER-->
+ <h2 id="tidereport"></h2>
+<script>
+let hour = new Date().getHours();
+let minute = new Date().getMinutes();
+let tideCheck;
+  if (hour < 3) {
+    tideCheck = "high";
+  } else if (hour < 8) {
+    tideCheck = "low";
+  } else if (hour < 13) {
+    tideCheck = "high";
+  } else if (hour < 18) {
+    tideCheck = "low";
+  } 
+  else {
+    tideCheck = "high";
+  }
+  
+  let greeting;
+  if (tideCheck == "high") {
+    greeting = "The tide is coming in. Does it bring voices?";
+  } else {
+     greeting = "You can't make out any voices. The tide seems to be out.";
+  }
+  
+document.getElementById("tidereport").innerHTML = greeting;
+</script>
+ <!--END OF NEW AND IMPROVED NEW TIDE CHECKER-->
+ 
+     <!--THIS IS THE RADIO PLAYER-->
+        <audio id="my-audio" autoplay loop>
+   <source src="backgroundwaves2.mp3" type="audio/mpeg">
+        </audio>
+    <button class = "button" onclick="cs_pause_music('kulning.mp3');">focus</button>
+    <button class = "button" onclick="cs_change_music('backgroundwaves2.mp3');">listen to the water</button>
+      <!--THAT'S ALL FOR THE RADIO-->
+  
+    </div>
+     <!IMAGES HERE>
+        <div class="under-header-images">
+            <img src="morningstar-01.png">
+        </div>
+    </div>
+    
+    
+    <div class="right">
+       <!--RIGHT COLUMN CONTENT ZONE-->
+        <div class="sub-right">
+        <h2>currently <i>playing:</i>
+              <!--AUDIO PICKER BEGINS-->
+    <script>
+        var audio = new Audio('estraven1.mp3');
+        var audio2 = new Audio('rowan.mp3');
+        var audio3 = new Audio('raquel.mp3');
+        var audio4 = new Audio('amelia.mp3');
+        var audio5 = new Audio('chasingdeer.mp3');
+        var audio6 = new Audio('throwingrocks.mp3');
+        var audio7 = new Audio('beach2.mp3');
+        var audio8 = new Audio('walkingtothecrummy.mp3');
+        var audio9 = new Audio('thievesden.mp3');
+        var audio10 = new Audio('indark.mp3');
+        var audio11 = new Audio('spectrum.mp3');
+        var audio12 = new Audio('estraven2.mp3');
+        var audio13 = new Audio('salmon.mp3');
+        var audio14 = new Audio('lino.mp3');
+        
+        
+        function updateTime(){
+          var currentTime = new Date();
+          var hour = currentTime.getHours();
+          var minute = currentTime.getMinutes();
+          if (hour == 2 && minute == 10) {
+                audio2.play();
+              }
+                else if (hour == 9 && minute == 20) {
+                audio5.play();
+              } else if (hour == 10 && minute == 0){
+                audio7.play();
+              } else if (hour == 11 && minute == 0){
+                audio8.play();
+              }  else if (hour == 11 && minute == 20){
+                audio9.play();
+              } else if (hour == 12 && minute == 0){
+                audio6.play();
+              }
+                else if (hour == 18 && minute == 31) {
+                audio3.play();
+              } else if (hour == 18 && minute == 46) {
+               audio.play();
+              } else if (hour == 19 && minute == 1){
+                audio4.play();
+              } else if (hour == 20 && minute == 30){
+                audio11.play();
+              } else if (hour == 21 && minute == 0){
+                audio10.play();
+              } else if (hour == 21 && minute == 30){
+                audio12.play();
+              } else if (hour == 22 && minute == 30){
+                audio13.play();
+              } else if (hour == 23 && minute == 30){
+                audio14.play();
+              } 
+        }
+        setInterval(updateTime, 1000);
+    </script>
+  <!--AUDIO PICKER ENDS-->
+  <!--NOW PLAYING MESSAGE BEGINS-->
+   <h2 id="nowplay"></h2>
+  <script>
+    function updateTime(){
+          var currentTime = new Date();
+          var hour = currentTime.getHours();
+          var minute = currentTime.getMinutes();
+          let nowplaying;
+           if (hour == 2 && minute > 10 && minute < 59) {
+    nowplaying = "Ro - <i>phone call</i>";
+  } else if (hour == 9 && minute > 19 && minute < 22) {
+    nowplaying = "anonymous - <i>chasing deer on moss street</i>";
+  } else if (hour == 10 && minute > 0 && minute < 25) {
+    nowplaying = "kitt - <i>ross bay</i>";
+  } else if (hour == 11 && minute > 0 && minute < 2) {
+    nowplaying = "anonymous - <i>walking down moss street</i>";
+  } else if (hour == 11 && minute > 19 && minute < 35) {
+    nowplaying = "kitt peacock - <i>den of thieves</i>";
+  } else if (hour == 12 && minute > 0 && minute < 35) {
+    nowplaying = "dani, cassia, and kitt - <i>throwing rocks</i>";
+  } else if (hour == 18 && minute > 30 && minute < 36) {
+    nowplaying = "Raquel Wilson - <i>infinite: the tale of the grey green goo</i>";
+  } else if (hour == 18 && minute > 45 && minute < 51) {
+    nowplaying = "Estraven Lupino-Smith - <i>bedtime story</i>";
+  } else if (hour == 19 && minute > 0 && minute < 5) {
+    nowplaying = "Amelia Powell - <i>little fish</i>";
+  } else if (hour == 20 && minute > 30 && minute < 36) {
+    nowplaying = "Gabe Moore - <i>spectrum</i>";
+  } else if (hour == 21 && minute > 0 && minute < 5) {
+    nowplaying = "Natalia Blooming - <i>the night bus glitched out of existence so you are walking home alone pov (ft. Ayonica)</i>";
+  } else if (hour == 21 && minute > 30 && minute < 35) {
+    nowplaying = "Estraven Lupino-Smith - <i>selkie song</i>";
+  } else if (hour == 22 && minute > 30 && minute < 32) {
+    nowplaying = "Ollie Beeby - <i>salmon song</i>";
+  } else if (hour == 23 && minute > 30 && minute < 34) {
+    nowplaying = "Paulino Caputo  - <i>a story</i>";
+  } else {
+     nowplaying = "The water is still for the moment.";
+  }
+  document.getElementById("nowplay").innerHTML = nowplaying;
+    }
+    setInterval(updateTime, 1000);
+   
+</script>
+  
+  <!--NOW PLAYING MESSAGE ENDS-->
+       
+      
+        </div>
+         <div class="under-header">
+          <h2>just <i>played:</i></h2>
+          <!--JUST PLAYED MESSAGE BEGINS-->
+          <h2 id="justplayed"></h2>
+  <script>
+    function updateTime(){
+          var currentTime = new Date();
+          var hour = currentTime.getHours();
+          var minute = currentTime.getMinutes();
+          let justplayed;
+           if (hour > 0 && hour < 3) {
+    justplayed = "Paulino Caputo - <i>a story</i>";
+  } else if (hour > 2 && hour < 10) {
+    justplayed = "Ro - <i>phone call</i>";
+  } else if (hour == 9 && minute < 21) {
+    justplayed = "Ro - <i>phone call</i>";
+  } else if (hour == 9 && minute > 21) {
+    justplayed = "anonymous - <i>chasing deer on moss street</i>";
+  } else if (hour == 10 && minute > 24) {
+    justplayed = "kitt - <i>ross bay</i>";
+  }  else if (hour == 11 && minute > 1 && minute < 34) {
+    justplayed = "anonymous - <i>walking down moss street</i>";
+  } else if (hour == 11 && minute > 34) {
+    justplayed = "kitt peacock - <i>den of thieves</i>";
+  } else if (hour == 12 && minute < 35) {
+    justplayed = "kitt peacock - <i>den of thieves</i>";
+  } else if (hour == 12 && minute > 35) {
+    justplayed = "dani, cassia, and kitt - <i>throwing rocks</i>";
+  } else if (hour > 12 && hour < 18) {
+    justplayed = "dani, cassia, and kitt - <i>throwing rocks</i>";
+  } else if (hour == 18 && minute < 35) {
+    justplayed = "dani, cassia, and kitt - <i>throwing rocks</i>";
+  } else if (hour == 18 && minute > 35 && minute < 50) {
+    justplayed = "Raquel Wilson - <i>infinite: the tale of the grey green goo</i>";
+  } else if (hour == 18 && minute > 50) {
+    justplayed = "Estraven Lupino-Smith - <i>bedtime story</i>";
+  } else if (hour == 19 && minute > 4) {
+    justplayed = "Amelia Powell - <i>little fish</i>";
+  } else if (hour == 20 && minute < 36) {
+    justplayed = "Amelia Powell - <i>little fish</i>";
+  } else if (hour == 20 && minute > 36) {
+    justplayed = "Gabe Moore - <i>spectrum</i>";
+  } else if (hour == 21 && minute < 4) {
+    justplayed = "Gabe Moore - <i>spectrum</i>";
+  } else if (hour == 21 && minute > 4 && minute < 35) {
+    justplayed = "Natalia Blooming - <i>the night bus glitched out of existence so you are walking home alone pov (ft. Ayonica)</i>";
+  } else if (hour == 21 && minute > 35) {
+    justplayed = "Estraven Lupino-Smith - <i>selkie song</i>";
+  } else if (hour == 22 && minute < 32) {
+    justplayed = "Estraven Lupino-Smith - <i>selkie song</i>";
+  } else if (hour == 22 && minute > 32) {
+    justplayed = "Ollie Beeby - <i>salmon song</i>";
+  } else if (hour == 23 && minute < 34) {
+    justplayed = "Ollie Beeby - <i>salmon song</i>";
+  } else if (hour == 23 && minute > 34) {
+    justplayed = "Paulino Caputo  - <i>a story</i>";
+  } else {
+     justplayed = "The last message seems to have been caught by the tide.";
+  }
+  document.getElementById("justplayed").innerHTML = justplayed;
+    }
+    setInterval(updateTime, 1000);
+   
+</script>
+          <!--JUST PLAYED MESSAGE ENDS-->
+         </div>
+        <div class="under-header">
+            <!--PICS GO HERE-->
+          <img src="illustrationside.png" alt="ripples image">
+        </div>
+          <div class="under-header">
+          <h2>collected by Kitt Peacock // for Ripples Residency // at Crummy Gallery // curated by Dirty Dishes Collective // funded by the Wronger Wave festival // July, 2022</h2>
+        </div>
+          <div class="under-header">
+          <img src="illustrations-02.png" alt="bird image">
+        </div>
+    </div>
+  </div>
+  
+  
+  <script src="audioswitcher.js"></script>
+</body>
+</html>
